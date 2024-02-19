@@ -1,3 +1,4 @@
+import 'package:cloth_ecommerce_app/login/signup_ui/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -74,7 +75,7 @@ class ClothEcommerceApp extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case SampleItemListView.routeName:
                   default:
-                    return const SampleItemListView();
+                    return const LoginScreen();
                 }
               },
             );
