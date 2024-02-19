@@ -8,8 +8,8 @@ import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
 
 /// The Widget that configures your application.
-class MyApp extends StatelessWidget {
-  const MyApp({
+class ClothEcommerceApp extends StatelessWidget {
+  const ClothEcommerceApp({
     super.key,
     required this.settingsController,
   });
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       listenable: settingsController,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           // Providing a restorationScopeId allows the Navigator built by the
           // MaterialApp to restore the navigation stack when a user leaves and
           // returns to the app after it has been killed while running in the
