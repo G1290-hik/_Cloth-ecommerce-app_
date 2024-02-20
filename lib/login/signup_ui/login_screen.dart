@@ -56,13 +56,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
-                    labelStyle: TextStyle(color: Colors.green),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.lightGreen),
+                    labelStyle: const TextStyle(color: Colors.black45),
+                    focusedBorder: const OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Color.fromARGB(255, 169, 4, 114)),
                     ),
                     border: OutlineInputBorder(),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.9), // Set text field background color
+                    fillColor: Colors.white.withOpacity(0.9),
                   ),
                 ),
                 SizedBox(height: 20),
@@ -70,13 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.green),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.lightGreen),
+                    labelStyle: const TextStyle(color: Colors.black54),
+                    focusedBorder: const OutlineInputBorder(
+                      borderSide:
+                      BorderSide(color: Color.fromARGB(255, 169, 4, 114)),
                     ),
                     border: OutlineInputBorder(),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.9), // Set text field background color
+                    fillColor: Colors.white.withOpacity(0.9),
                   ),
                   obscureText: true,
                 ),
@@ -85,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: _signIn,
                   child: Text('Login'),
                   textColor: Colors.white,
-                  color: Colors.green,
+                  color: Colors.pinkAccent,
                 ),
               ],
             ),
