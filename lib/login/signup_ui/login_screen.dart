@@ -31,16 +31,20 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Text('Login',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
         centerTitle: true,
         backgroundColor: Colors.green, // Change the app bar color as desired
       ),
-      body: Stack(
-        fit: StackFit.expand,
+      body: ListView(
+        physics:const NeverScrollableScrollPhysics(),
         children: <Widget>[
-          Image.asset(
-            "assets/images/background.jpg",
-             // Expand the image to cover the entire screen
+          Center(
+
+            child: Image.asset(
+              "assets/images/background_2.jpg",
+
+               // Expand the image to cover the entire screen
+            ),
           ),
           Container(
             padding: const EdgeInsets.all(20.0),
@@ -76,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   obscureText: true,
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 40),
                 MaterialButton(
                   onPressed: _signIn,
                   child: Text('Login'),
