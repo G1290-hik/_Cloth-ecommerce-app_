@@ -1,3 +1,4 @@
+import 'package:cloth_ecommerce_app/src/sample_feature/sample_item_list_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,6 +11,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  static const screen = '/Screens/login_screen.dart';
 
   void _signIn() {
     // Implement your sign-in logic here
@@ -20,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (email.isNotEmpty && password.isNotEmpty) {
       // TODO: Perform sign-in logic/validation
       print('Email: $email, Password: $password');
+      Navigator.pushNamed(context, SampleItemListView.routeName);
       // Here you can navigate to the next screen or perform necessary actions
     } else {
       // Handle empty fields
@@ -33,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: Text('Login',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
         centerTitle: true,
-        backgroundColor: Colors.green, // Change the app bar color as desired
+        backgroundColor: Colors.pink, // Change the app bar color as desired
       ),
       body: ListView(
         physics:const NeverScrollableScrollPhysics(),
@@ -41,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Center(
 
             child: Image.asset(
-              "assets/images/background_2.jpg",
+              "assets/images/background_2wb.png",
 
                // Expand the image to cover the entire screen
             ),
@@ -53,6 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 TextField(
+                  style: TextStyle(color: Colors.black),
                   controller: _emailController,
                   decoration: InputDecoration(
                     labelText: 'Email',
@@ -68,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 20),
                 TextField(
+                  style: TextStyle(color: Colors.black),
                   controller: _passwordController,
                   decoration: InputDecoration(
                     labelText: 'Password',
