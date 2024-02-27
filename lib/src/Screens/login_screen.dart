@@ -1,8 +1,6 @@
 import 'package:cloth_ecommerce_app/src/sample_feature/sample_item_list_view.dart';
 import 'package:flutter/material.dart';
 
-import '../src/sample_feature/sample_item_details_view.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -13,7 +11,6 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  static const screen = '/Screens/login_screen.dart';
 
   void _signIn() {
     // Implement your sign-in logic here
