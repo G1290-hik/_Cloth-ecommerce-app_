@@ -56,7 +56,7 @@ class SampleItemListView extends StatelessWidget {
               title: Text('${item.Name} ${item.id}'),
               leading: const CircleAvatar(
                 // Display the Flutter Logo image asset.
-                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+                foregroundImage: AssetImage('assets/images/background_2.jpg'),
               ),
               onTap: () {
                 // Navigate to the details page. If the user leaves and returns to

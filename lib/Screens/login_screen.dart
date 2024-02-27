@@ -1,6 +1,8 @@
 import 'package:cloth_ecommerce_app/src/sample_feature/sample_item_list_view.dart';
 import 'package:flutter/material.dart';
 
+import '../src/sample_feature/sample_item_details_view.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -34,19 +36,21 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+        title: Text(
+          'Login',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.pink, // Change the app bar color as desired
       ),
       body: ListView(
-        physics:const NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         children: <Widget>[
           Center(
-
             child: Image.asset(
               "assets/images/background_2wb.png",
 
-               // Expand the image to cover the entire screen
+              // Expand the image to cover the entire screen
             ),
           ),
           Container(
@@ -63,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     labelStyle: const TextStyle(color: Colors.black45),
                     focusedBorder: const OutlineInputBorder(
                       borderSide:
-                      BorderSide(color: Color.fromARGB(255, 169, 4, 114)),
+                          BorderSide(color: Color.fromARGB(255, 169, 4, 114)),
                     ),
                     border: OutlineInputBorder(),
                     filled: true,
@@ -79,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     labelStyle: const TextStyle(color: Colors.black54),
                     focusedBorder: const OutlineInputBorder(
                       borderSide:
-                      BorderSide(color: Color.fromARGB(255, 169, 4, 114)),
+                          BorderSide(color: Color.fromARGB(255, 169, 4, 114)),
                     ),
                     border: OutlineInputBorder(),
                     filled: true,
@@ -89,7 +93,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 40),
                 MaterialButton(
-                  onPressed: _signIn,
+                  onPressed: () {
+                    // Navigate to the details page. If the user leaves and returns to
+                    // the app after it has been killed while running in the
+                    // background, the navigation stack is restored.
+                    Navigator.restorablePushNamed(
+                      context,
+                      SampleItemListView.routeName,
+                    );
+                  },
                   child: Text('Login'),
                   textColor: Colors.white,
                   color: Colors.pinkAccent,

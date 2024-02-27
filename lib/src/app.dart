@@ -74,7 +74,7 @@ class ClothEcommerceApp extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case SampleItemListView.routeName:
                   default:
-                    return const LoginScreen();
+                    return LoginScreen();
                 }
               },
             );
