@@ -1,5 +1,4 @@
 //flutter/external packages
-import 'package:cloth_ecommerce_app/src/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -58,7 +57,7 @@ class ClothEcommerceApp extends StatelessWidget {
                     return const SignupPage();
                   default:
                     // Redirect to login page if not authenticated
-                    return const HomeScreen();
+                    return const LoginPage();
                 }
               },
             );
