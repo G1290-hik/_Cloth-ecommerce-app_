@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 // Importing SampleItemListView to navigate to it
 
-class LoginPage extends StatelessWidget {
+class LoginScreen extends StatelessWidget {
   static const String routeName = '/login';
 
-  const LoginPage({super.key}); // Declare route name variable
+  const LoginScreen({super.key}); // Declare route name variable
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,6 @@ class LoginPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigating to SampleItemListView
-
                 Navigator.restorablePushNamed(
                     context, SampleItemListView.routeName);
                 // Navigator.pushNamed(context, SampleItemListView.routeName);

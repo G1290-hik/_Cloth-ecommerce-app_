@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
 //local packages
 import 'Screens/screen.dart';
 import 'sample_feature/sample_item_details_view.dart';
@@ -51,13 +50,13 @@ class ClothEcommerceApp extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case SampleItemListView.routeName:
                     return const SampleItemListView();
-                  case LoginPage.routeName: // Route for LoginPage
-                    return const LoginPage();
+                  case LoginScreen.routeName: // Route for LoginPage
+                    return const LoginScreen();
                   case SignupPage.routeName: // Route for SignupPage
                     return const SignupPage();
                   default:
                     // Redirect to login page if not authenticated
-                    return const LoginPage();
+                    return const HomeScreen();
                 }
               },
             );
