@@ -1,14 +1,14 @@
 import 'package:cloth_ecommerce_app/src/Screen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cloth_ecommerce_app/src/Theme.dart';
 import 'package:flutter/material.dart';
 
-class MyCardItem extends StatefulWidget {
+class CardItem extends StatefulWidget {
   final String price;
   final String title;
   final String image;
   final String description;
 
-  const MyCardItem({
+  const CardItem({
     required this.price,
     required this.title,
     Key? key,
@@ -17,14 +17,15 @@ class MyCardItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  MyCardItemState createState() => MyCardItemState();
+  VItemCardState createState() => VItemCardState();
 }
 
-class MyCardItemState extends State<MyCardItem> {
+class VItemCardState extends State<CardItem> {
   int quantity = 0;
   bool showButtons = true;
   bool showIncrementDecrement = false;
   bool isWishlistMarked = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,17 +34,18 @@ class MyCardItemState extends State<MyCardItem> {
       ),
       padding: const EdgeInsets.all(8),
       child: GestureDetector(
+// Inside the onTap function of your CardItem widget
         onTap: () {
-          // Navigate to the Screen when tapped
           Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => Screen(
-                item: widget,
+                item: widget, // Pass the whole CardItem widget
               ),
             ),
           );
         },
+
         child: Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
@@ -73,7 +75,7 @@ class MyCardItemState extends State<MyCardItem> {
                             widget.title,
                             style: const TextStyle(
                               fontSize: 16,
-                              color: Color.fromARGB(0, 53, 53, 53),
+                              color: Color.fromARGB(255, 59, 55, 55),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -147,7 +149,6 @@ class MyCardItemState extends State<MyCardItem> {
                             textAlign: TextAlign.right,
                             style: const TextStyle(
                               fontSize: 14,
-                              color: Color.fromARGB(255, 59, 55, 55),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -180,7 +181,7 @@ class MyCardItemState extends State<MyCardItem> {
                           ),
                         if (quantity == 0)
                           MaterialButton(
-                            color: CupertinoColors.systemGreen,
+                             color: customTheme.cardColor,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
